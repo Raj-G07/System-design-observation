@@ -1,0 +1,144 @@
+# 🧩 Signature Rule, Property Rule, and Method Rule
+
+These three rules — **Signature Rule**, **Property Rule**, and **Method Rule** — play an important role in defining **how objects and classes behave** in object-oriented design (OOP) and **how inheritance and polymorphism** work in languages like **C++**, **Java**, and **TypeScript**.
+
+---
+
+## ⚙️ 1. Signature Rule
+
+### 🔹 Definition
+The **Signature Rule** ensures that **method signatures (name + parameter list)** are consistent when **overriding** or **overloading** functions in inheritance hierarchies.
+
+### 📘 Explanation
+- A **method signature** includes:
+  - Method name
+  - Number and type of parameters
+  - Order of parameters
+
+### ✅ Rules
+- In **function overloading**, methods **can** have the same name but **must differ in parameters**.
+- In **function overriding**, methods **must have the exact same signature** as the base class function.
+
+### 💡 Example (C++)
+```cpp
+class Animal {
+public:
+    virtual void makeSound(int volume) {
+        cout << "Animal sound at volume " << volume << endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    // ✅ Correct: Same signature → valid overriding
+    void makeSound(int volume) override {
+        cout << "Dog barks at volume " << volume << endl;
+    }
+
+    // ❌ Incorrect: Different signature → overloads, not overrides
+    void makeSound(string type) {
+        cout << "Dog makes " << type << " sound" << endl;
+    }
+};
+```
+
+---
+
+## 🏠 2. Property Rule
+
+### 🔹 Definition
+The **Property Rule** defines how **attributes (properties or data members)** should be declared, accessed, and inherited in class design.
+
+### 📘 Explanation
+- Properties represent the state of an object.
+- Good design keeps data encapsulated and accessed via getters/setters.
+- Child classes should not directly modify parent class properties unless explicitly allowed.
+
+### ✅ Rules
+- Properties should be private or protected (not public).
+- Use getters and setters to control access.
+- When inherited, a derived class should not violate parent’s data consistency.
+- Avoid duplicate property names in inheritance chains (to prevent shadowing).
+
+### 💡 Example (C++)
+```cpp
+class User {
+protected:
+    string name;
+public:
+    void setName(const string& n) { name = n; }
+    string getName() const { return name; }
+};
+
+class Admin : public User {
+private:
+    int adminLevel;
+public:
+    void setAdminLevel(int level) { adminLevel = level; }
+    void showInfo() {
+        cout << "Admin: " << getName() << ", Level: " << adminLevel << endl;
+    }
+};
+```
+
+---
+
+## 🔧 3. Method Rule
+
+### 🔹 Definition
+The **Method Rule** governs how **methods (functions)** behave across inheritance and polymorphism — focusing on overriding, abstraction, and reusability.
+
+### 📘 Explanation
+- Methods define behavior of a class.
+
+- They can be:
+  - Overridden — redefining parent behavior.
+  - Overloaded — multiple versions within same class.
+  - Abstract — must be implemented by derived class.
+
+### ✅ Rules
+- A derived class can override parent methods if marked virtual.
+- A derived class must implement pure virtual methods (= 0).
+- Avoid changing method purpose while overriding.
+- Keep methods cohesive — one function = one purpose.
+- Avoid duplicating method names for unrelated actions.
+
+### 💡 Example (C++)
+```cpp
+class Shape {
+public:
+    virtual double area() = 0;  // Pure virtual (abstract method)
+};
+
+class Circle : public Shape {
+    double radius;
+public:
+    Circle(double r) : radius(r) {}
+    double area() override { return 3.14 * radius * radius; }
+};
+
+class Rectangle : public Shape {
+    double width, height;
+public:
+    Rectangle(double w, double h) : width(w), height(h) {}
+    double area() override { return width * height; }
+};
+```
+
+---
+
+## 🔄 Summary Table
+
+| Rule Type          | Focus Area                 | Key Idea                              | Common Violation                         |
+| ------------------ | -------------------------- | ------------------------------------- | ---------------------------------------- |
+| **Signature Rule** | Function name & parameters | Keep same signature in overriding     | Wrong parameter list in derived class    |
+| **Property Rule**  | Class data members         | Encapsulate and control access        | Making fields public or inconsistent     |
+| **Method Rule**    | Behavior & polymorphism    | Preserve method meaning & reusability | Changing method purpose while overriding |
+
+---
+
+## 🔗 Reference
+
+- [GeeksforGeeks – Function Overloading & Overriding in C++](https://www.geeksforgeeks.org/cpp/function-overloading-vs-function-overriding-in-cpp/)
+- [C++ OOP Concepts (TutorialsPoint)](https://www.tutorialspoint.com/cplusplus/cpp_object_oriented.htm)
+- [Inheritance and Polymorphism Explained (Programiz)](https://www.programiz.com/cpp-programming/inheritance)
