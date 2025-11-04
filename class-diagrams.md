@@ -1,0 +1,238 @@
+# 🧩 Class Diagrams — The Foundation of Object-Oriented Design
+
+A **Class Diagram** is one of the most important **UML (Unified Modeling Language)** diagrams used in **Low-Level Design (LLD)**.  
+It shows how **classes**, **attributes**, **methods**, and **relationships** connect to form the blueprint of a system.
+
+---
+
+## 🧠 What Is a Class Diagram?
+
+A **Class Diagram** describes:
+- The **structure** of a system in terms of classes and their attributes.
+- The **relationships** between objects (association, inheritance, aggregation, composition).
+- The **behaviors** or methods each class exposes.
+
+Think of it as a **skeleton** of your application — it helps you move from conceptual architecture to actual code.
+
+---
+
+## 🏗️ Basic Syntax
+
+| ClassName |
+|:-----------| 
+| - attribute1 |
+| - attribute2 |
+| + method1() |
+| + method2() |
+
+
+**Legend:**
+- `+` → Public  
+- `-` → Private  
+- `#` → Protected  
+- `~` → Package (default)
+
+---
+
+## ⚙️ 1. E-Commerce System Example
+
+### 🛍️ Scenario
+We want to design a simplified **E-commerce System** with customers placing orders containing products.
+
+### UML Representation
+
+| Customer |
+|:------|
+| - id |
+| - name |
+| - email |
+| + placeOrder() |
+| + viewOrder() |
+
+Customer -----< Order
+*
+| Order |
+|:-----|
+| - id |
+| - date |
+| - totalAmount |
+| + addItem() |
+| + calculate() |
+
+Order -----< Product
+*
+| Product |
+|:----|
+| - id |
+| - name |
+| - price |
+| + getPrice() |
+
+
+**Explanation:**
+- A **Customer** can place multiple **Orders**.
+- An **Order** can contain multiple **Products**.
+- Relationships:
+  - **Customer → Order** (1 to many)
+  - **Order → Product** (many to many)
+
+👉 **Real-World Use:**  
+This diagram would guide backend developers to implement classes and database tables for customers, orders, and products.
+
+---
+
+## 🚗 2. Ride-Sharing App Example (Uber / Ola)
+
+### 🧩 Scenario
+Design a **Ride-Sharing System** where riders request rides, and drivers accept them.
+
+| User |
+|:----|
+| - id |
+| - name |
+| - phone |
+| + login() |
+| + logout() |
+
+| Rider |
+|:----|
+| + requestRide()|
+
+| Driver |
+|:----|
+| - licenseNo |
+| + acceptRide() |
+| + completeRide()|
+
+Rider 1 -----< Ride >----- 1 Driver
+*
+| Ride |
+|:----|
+| - id |
+| - source |
+| - destination |
+| - fare |
+| + calculateFare() |
+| + startRide() |
+
+
+**Explanation:**
+- Both **Rider** and **Driver** inherit from **User** (using inheritance).
+- **Ride** connects both via association.
+- Promotes **reusability** and **extensibility**.
+
+👉 **System Design Insight:**  
+In a scalable system, each of these classes could correspond to microservices or database entities.
+
+---
+
+## 📱 3. Social Media Platform Example
+
+### 🧩 Scenario
+Design a **Social Media System** with users, posts, and comments.
+
+| User |
+|:-----|
+| - id |
+| - username |
+| - email |
+| + createPost() |
+| + comment() |
+
+User -----< Post
+*
+
+| Post |
+|:----|
+| - id |
+| - content |
+| - timestamp |
+| + addComment() |
+| + like() |
+
+Post 1 -----< Comment
+*
+| Comment |
+|:----|
+| - id |
+| - text |
+| - authorId |
+| + edit() |
+| + delete() |
+
+**Explanation:**
+- A **User** can have many **Posts**.
+- A **Post** can have many **Comments**.
+- Strong **composition** relationship between `Post` and `Comment`.
+
+👉 **Use Case:**  
+Helps plan your data model for MongoDB or relational schema.
+
+---
+
+## 🔗 Common Relationships in Class Diagrams
+
+| Relationship | Symbol | Meaning |
+|:--------------|:--------|:----------|
+| **Association** | Line | “Uses” relationship between classes |
+| **Multiplicity** | `1..*` | Defines how many objects can relate |
+| **Inheritance (Generalization)** | Arrow with hollow triangle | Parent–child relationship |
+| **Aggregation** | Diamond (empty) | Whole–part relationship (weak) |
+| **Composition** | Diamond (filled) | Whole–part relationship (strong) |
+| **Dependency** | Dotted arrow | One class depends on another |
+
+---
+
+## 🧰 Tools for Creating Class Diagrams
+
+- [**PlantUML**](https://plantuml.com/class-diagram)
+- [**Mermaid (Markdown Diagrams)**](https://mermaid.js.org/syntax/classDiagram.html)
+- [**Lucidchart**](https://www.lucidchart.com/)
+- [**Draw.io (diagrams.net)**](https://app.diagrams.net/)
+- [**Visual Paradigm**](https://online.visual-paradigm.com/)
+
+---
+
+## 📘 References
+
+- [GeeksforGeeks — Class Diagrams in UML](https://www.geeksforgeeks.org/class-diagram/)
+- [PlantUML — Class Diagram Documentation](https://plantuml.com/class-diagram)
+- [Mermaid — Class Diagram Syntax](https://mermaid.js.org/syntax/classDiagram.html)
+- [TutorialsPoint — UML Class Diagrams](https://www.tutorialspoint.com/uml/uml_class_diagram.htm)
+
+---
+
+## 🏁 Summary
+
+| Concept | Description |
+|:----------|:-------------|
+| **Purpose** | Visually model class structure and relationships |
+| **Used In** | Low-Level Design (LLD), database schema planning, API design |
+| **Helps Developers** | Understand inter-class dependencies |
+| **Outcome** | Cleaner, modular, and maintainable architecture |
+
+> **In short:**  
+> Class diagrams turn your *ideas* into *blueprints* — the essential step before writing code.
+
+---
+
+### 💡 Tip
+If you use **Mermaid**, you can render UML directly in GitHub markdown!
+
+Example:
+```mermaid
+classDiagram
+    class Customer {
+      +int id
+      +string name
+      +string email
+      +placeOrder()
+    }
+    class Order {
+      +int id
+      +string date
+      +float totalAmount
+      +addItem()
+      +calculateTotal()
+    }
+    Customer "1" --> "*" Order
