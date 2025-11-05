@@ -55,6 +55,7 @@ nav:
   - 13. Factory Pattern: 13 . factory-design-pattern.md
   - 14. Singleton Pattern: 14 . singleton-design-pattern.md
   - 15. Food Delivery System Design: 15 . food-delivery-app-design.md
+  - 16. Observer Pattern: 16 . observer-design-pattern.md 
   
 markdown_extensions:
   # --- Core extensions ---
