@@ -1,0 +1,75 @@
+site_name: System Design Observation
+site_description: Notes and examples on System Design, OOP, and Design Patterns
+site_author: Raj Gupta
+theme:
+  name: material
+  font:
+    text: Inter
+    code: Fira Code
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.top
+    - toc.integrate
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+  palette:
+    # Light Mode
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    # Dark Mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+nav:
+  - Home: index.md
+  - 01. System Design vs DSA: 01 . system-design-vs-dsa.md
+  - 02. Pillars of System Design: 02 . pillars-of-system-design.md
+  - 03. HLD vs LLD: 03 . hld-vs-lld.md
+  - 04. OOPs in System Design: 04 . oops-in-system-design.md
+  - 05. UML Diagrams: 05 . uml-diagrams.md
+  - 06. Class Diagrams: 06 . class-diagrams.md
+  - 07. Sequence Diagrams: 07 . sequence-diagrams.md
+  - 08. SOLID Principles: 08 . solid-design-principles.md
+  - 09. Signature/Property/Method Rule: 09 . signature-property-method-rule.md
+  - 10. Exception Rule: 10 . exception-rule.md
+  - 11. Real World Example: 11 . real-world-example.md
+  - 12. Strategy Pattern: 12 . strategy-design-pattern.md
+  - 13. Factory Pattern: 13 . factory-design-pattern.md
+
+markdown_extensions:
+  # --- Core extensions ---
+  - admonition
+  - toc:
+      permalink: true
+  - tables
+  - fenced_code
+  - codehilite:
+      guess_lang: false
+      linenums: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums_style: inline
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+
+extra_css:
+  - styles/mermaid-custom.css
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js
+  - js/mermaid-init.js

@@ -1,0 +1,17 @@
+/* Light mode (default) */
+:root {
+  --mermaid-font-family: "Segoe UI", sans-serif;
+  --mermaid-edge-color: #6a5acd;
+  --mermaid-node-bg: #e6e6fa;
+  --mermaid-node-border: #9370db;
+  --mermaid-text-color: #222;
+}
+
+/* Dark mode (Material “slate” scheme) */
+[data-md-color-scheme="slate"] {
+  --mermaid-font-family: "Segoe UI", sans-serif;
+  --mermaid-edge-color: #b19cd9;
+  --mermaid-node-bg: #1e1e2f;
+  --mermaid-node-border: #9370db;
+  --mermaid-text-color: #f3f3f3;
+}
