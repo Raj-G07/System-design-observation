@@ -50,7 +50,8 @@ nav:
   - 11. Real World Example: 11 . real-world-example.md
   - 12. Strategy Pattern: 12 . strategy-design-pattern.md
   - 13. Factory Pattern: 13 . factory-design-pattern.md
-
+  - 14. Singleton Pattern: 14 . singleton-design-pattern.md
+  
 markdown_extensions:
   # --- Core extensions ---
   - admonition
@@ -74,7 +75,7 @@ markdown_extensions:
 extra_css:
   - styles/mermaid-custom.css
   - styles/custom.css
-  
+
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js
   - js/mermaid-init.js
