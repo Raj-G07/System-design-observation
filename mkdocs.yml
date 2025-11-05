@@ -3,6 +3,9 @@ site_description: Notes and examples on System Design, OOP, and Design Patterns
 site_author: Raj Gupta
 repo_url: https://github.com/Raj-G07/System-design-observation
 repo_name: ""
+plugins:
+  - search
+  - mermaid2
 theme:
   name: material
   icon:
@@ -51,6 +54,7 @@ nav:
   - 12. Strategy Pattern: 12 . strategy-design-pattern.md
   - 13. Factory Pattern: 13 . factory-design-pattern.md
   - 14. Singleton Pattern: 14 . singleton-design-pattern.md
+  - 15. Food Delivery System Design: 15 . food-delivery-app-design.md
   
 markdown_extensions:
   # --- Core extensions ---
