@@ -1,0 +1,12 @@
+/* Headings hover effect with theme-aware color */
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+    /* Use accent color from theme */
+    color: var(--md-accent-fg-color);
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Optional: different hover effect for h1 specifically */
+h1:hover {
+    color: var(--md-primary-fg-color);
+}
