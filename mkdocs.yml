@@ -56,7 +56,10 @@ nav:
   - 14. Singleton Pattern: 14 . singleton-design-pattern.md
   - 15. Food Delivery System Design: 15 . food-delivery-app-design.md
   - 16. Observer Pattern: 16 . observer-design-pattern.md 
-  
+  - 17. Decorator Pattern: 17 . decorator-design-pattern.md
+  - 18. Notification System Design: 18 . notification-system-design.md
+  - 19. Command Pattern: 19 . command-design-pattern.md
+
 markdown_extensions:
   # --- Core extensions ---
   - admonition
