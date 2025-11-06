@@ -59,7 +59,8 @@ nav:
   - 17. Decorator Pattern: 17 . decorator-design-pattern.md
   - 18. Notification System Design: 18 . notification-system-design.md
   - 19. Command Pattern: 19 . command-design-pattern.md
-
+  - 20. Adapter Pattern: 20 . adapter-design-pattern.md
+  - 21. Facade Pattern: 21 . facade-design-pattern.md
 markdown_extensions:
   # --- Core extensions ---
   - admonition
