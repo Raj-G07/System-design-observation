@@ -63,6 +63,7 @@ nav:
   - 21. Facade Pattern: 21 . facade-design-pattern.md
   - 22. Law of Demeter: 22 . law-of-demeter.md
   - 23. Music Player System Design: 23 . music-player-design.md
+  - 24. Composite Pattern: 24 . composite-design-pattern.md
   
 markdown_extensions:
   # --- Core extensions ---
