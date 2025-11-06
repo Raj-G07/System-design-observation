@@ -61,6 +61,9 @@ nav:
   - 19. Command Pattern: 19 . command-design-pattern.md
   - 20. Adapter Pattern: 20 . adapter-design-pattern.md
   - 21. Facade Pattern: 21 . facade-design-pattern.md
+  - 22. Law of Demeter: 22 . law-of-demeter.md
+  - 23. Music Player System Design: 23 . music-player-design.md
+  
 markdown_extensions:
   # --- Core extensions ---
   - admonition
