@@ -70,6 +70,7 @@ nav:
   - 28. Payment Gateway System Design: 28 . payment-gateway-system.md
   - 29. Discout Coupon Design: 29 . discount-coupon-design.md
   - 30. Bridge Pattern: 30 . bridge-pattern.md 
+  - 31. Inventory Management System Design: 31 . inventory-management.md
   
 markdown_extensions:
   # --- Core extensions ---
