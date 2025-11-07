@@ -66,6 +66,7 @@ nav:
   - 24. Composite Pattern: 24 . composite-design-pattern.md
   - 25. Template Pattern: 25. template-method-pattern.md
   - 26. Proxy Pattern: 26 . proxy-design-pattern.md
+  - 27. Chain of Responsibility: 27 . chain-of-responsibility.md
   
 markdown_extensions:
   # --- Core extensions ---
