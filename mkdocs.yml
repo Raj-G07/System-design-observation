@@ -67,6 +67,7 @@ nav:
   - 25. Template Pattern: 25. template-method-pattern.md
   - 26. Proxy Pattern: 26 . proxy-design-pattern.md
   - 27. Chain of Responsibility: 27 . chain-of-responsibility.md
+  - 28. Payment Gateway System Design: 28 . payment-gateway-system.md
   
 markdown_extensions:
   # --- Core extensions ---
