@@ -69,6 +69,7 @@ nav:
   - 27. Chain of Responsibility: 27 . chain-of-responsibility.md
   - 28. Payment Gateway System Design: 28 . payment-gateway-system.md
   - 29. Discout Coupon Design: 29 . discount-coupon-design.md
+  - 30. Bridge Pattern: 30 . bridge-pattern.md 
   
 markdown_extensions:
   # --- Core extensions ---
