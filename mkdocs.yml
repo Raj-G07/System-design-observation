@@ -75,8 +75,8 @@ nav:
   - 33. Dating App System Design: 33 . dating-system-design.md
   - 34. Iterator Pattern: 34 . iterator-design-pattern.md
   - 35. Flyweight Pattern: 35 . flyweight-design-pattern.md
-  - 36. State Pattern: 36 .  state-design-pattern.md
-  - 37. Splitwise System Design: 37 . splitwise-system-design.md
+  - 36. Splitwise System Design: 36 . splitwise-system-design.md
+  - 37. State Pattern: 37 . state-design-pattern.md
   
 markdown_extensions:
   # --- Core extensions ---
