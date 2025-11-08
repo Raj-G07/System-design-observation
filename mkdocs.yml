@@ -72,6 +72,7 @@ nav:
   - 30. Bridge Pattern: 30 . bridge-pattern.md 
   - 31. Inventory Management System Design: 31 . inventory-management.md
   - 32. Builder Pattern: 32 . builder-design-pattern.md
+  - 33. Dating App System Design: 33 . dating-system-design.md
   
 markdown_extensions:
   # --- Core extensions ---
