@@ -73,6 +73,8 @@ nav:
   - 31. Inventory Management System Design: 31 . inventory-management.md
   - 32. Builder Pattern: 32 . builder-design-pattern.md
   - 33. Dating App System Design: 33 . dating-system-design.md
+  - 34. Iterator Pattern: 34 . iterator-design-pattern.md
+  - 35. Flyweight Pattern: 35 . flyweight-design-pattern.md
   
 markdown_extensions:
   # --- Core extensions ---
