@@ -70,6 +70,15 @@ nav:
   - 28. Payment Gateway System Design: 28 . payment-gateway-system.md
   - 29. Discout Coupon Design: 29 . discount-coupon-design.md
   - 30. Bridge Pattern: 30 . bridge-pattern.md 
+  - 31. Inventory Management System Design: 31 . inventory-management.md
+  - 32. Builder Pattern: 32 . builder-design-pattern.md
+  - 33. Dating App System Design: 33 . dating-system-design.md
+  - 34. Iterator Pattern: 34 . iterator-design-pattern.md
+  - 35. Flyweight Pattern: 35 . flyweight-design-pattern.md
+  - 36. Splitwise System Design: 36 . splitwise-system-design.md
+  - 37. State Pattern: 37 . state-design-pattern.md
+  - 38. Tic-Tac-Toe System Design: 38 . tic-tac-toe-system-design.md
+  - 39. Snake and Ladder System Design: 39 . snake-&-ladder-system-design.md
   
 markdown_extensions:
   # --- Core extensions ---
