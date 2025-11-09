@@ -81,6 +81,7 @@ nav:
   - 39. Snake and Ladder System Design: 39 . snake-&-ladder-system-design.md
   - 40. Mediator Pattern: 40 . mediator-design-pattern.md
   - 41. Prototype Pattern: 41 . prototype-design-pattern.md
+  - 42. Chess System Design: 42 . chess-system-design.md
   
 markdown_extensions:
   # --- Core extensions ---
