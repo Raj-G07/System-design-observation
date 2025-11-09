@@ -78,6 +78,7 @@ nav:
   - 36. Splitwise System Design: 36 . splitwise-system-design.md
   - 37. State Pattern: 37 . state-design-pattern.md
   - 38. Tic-Tac-Toe System Design: 38 . tic-tac-toe-system-design.md
+  - 39. Snake and Ladder System Design: 39 . snake-&-ladder-system-design.md
   
 markdown_extensions:
   # --- Core extensions ---
