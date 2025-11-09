@@ -79,6 +79,8 @@ nav:
   - 37. State Pattern: 37 . state-design-pattern.md
   - 38. Tic-Tac-Toe System Design: 38 . tic-tac-toe-system-design.md
   - 39. Snake and Ladder System Design: 39 . snake-&-ladder-system-design.md
+  - 40. Mediator Pattern: 40 . mediator-design-pattern.md
+  - 41. Prototype Pattern: 41 . prototype-design-pattern.md
   
 markdown_extensions:
   # --- Core extensions ---
