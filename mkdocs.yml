@@ -113,11 +113,13 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.tabbed:
       alternate_style: true
-      
+  - pymdownx.details
+  
 extra_css:
   - styles/mermaid-custom.css
   - styles/custom.css
   - styles/code-custom.css
+  - styles/admonition.css
   
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js
