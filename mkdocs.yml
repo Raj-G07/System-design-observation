@@ -1,6 +1,7 @@
 site_name: SystemEye
 site_description: Notes and examples on System Design, OOP, and Design Patterns
 site_author: Raj Gupta
+site_dir: site 
 repo_url: https://github.com/Raj-G07/System-design-observation
 repo_name: ""
 plugins:
