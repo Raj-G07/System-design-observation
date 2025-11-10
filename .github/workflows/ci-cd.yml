@@ -1,0 +1,41 @@
+name: Deploy SystemEye site
+
+on:
+  push:
+    branches:
+      - main   # Change to your default branch if needed
+
+permissions:
+  contents: write  # Required for deployment to GitHub Pages
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️ Checkout your repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2️ Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # 3️ Install dependencies
+      - name: Install MkDocs and plugins
+        run: |
+          pip install mkdocs-material
+          pip install mkdocs-minify-plugin mkdocs-git-revision-date-localized-plugin mkdocs-awesome-pages-plugin
+
+      # 4️ Build your site
+      - name: Build MkDocs site
+        run: mkdocs build --strict
+
+      # 5️ Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ./site

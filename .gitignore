@@ -1,0 +1,64 @@
+# ==============================
+# MkDocs build artifacts
+# ==============================
+site/
+*.log
+*.bak
+*.swp
+
+# ==============================
+# Python environment
+# ==============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.tmp
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# ==============================
+# OS / IDE specific
+# ==============================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.code-workspace
+
+# ==============================
+# Cache / Dependency files
+# ==============================
+.cache/
+pip-wheel-metadata/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# ==============================
+# MkDocs Plugins
+# ==============================
+# If you use search indexing, exclude those builds
+search_index.json
+
+# ==============================
+# Node or Frontend assets (optional)
+# ==============================
+node_modules/
+package-lock.json
+npm-debug.log
+yarn-error.log
+
+# ==============================
+# GitHub Actions / Pages artifacts
+# ==============================
+*.tar
+*.zip
+*.gz
