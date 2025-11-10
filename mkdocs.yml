@@ -84,6 +84,7 @@ nav:
   - 42. Chess System Design: 42 . chess-system-design.md
   - 43. Visitor Pattern: 43 . visitor-design-pattern.md
   - 44. Memento Pattern: 44 . memento-design-pattern.md
+  - 45. Anti Pattern: 45 . anti-pattern.md
   
 markdown_extensions:
   # --- Core extensions ---
