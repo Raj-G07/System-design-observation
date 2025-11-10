@@ -1,0 +1,1575 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Notes and examples on System Design, OOP, and Design Patterns" name="description"/>
+<meta content="Raj Gupta" name="author"/>
+<link href="../05%20.%20uml-diagrams/" rel="prev"/>
+<link href="../07%20.%20sequence-diagrams/" rel="next"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.23" name="generator"/>
+<title>06. Class Diagrams - SystemEye</title>
+<link href="../assets/stylesheets/main.84d31ad4.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Open Sans";--md-code-font:"Fira Code"}</style>
+<link href="../styles/mermaid-custom.css" rel="stylesheet"/>
+<link href="../styles/custom.css" rel="stylesheet"/>
+<link href="../styles/code-custom.css" rel="stylesheet"/>
+<link href="../styles/admonition.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="deep-purple" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#class-diagrams-the-foundation-of-object-oriented-design">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="SystemEye" class="md-header__button md-logo" data-md-component="logo" href=".." title="SystemEye">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M120.1 37.4C161.1 12.2 207.7-.8 255 0c168 0 257 123.8 257 219.5-.1 32.7-13 63.9-35.9 87.2-22.9 23.2-54 36.5-86.7 37-75.2 0-91.5-23.1-91.5-32 0-3.8 1.2-6.2 4.8-9.4l1-1.2.4-1.6c10.5-11.5 15.9-26.2 15.9-41.6 0-78.7-82.2-142.7-184-142.7-37.5-.3-74.5 8.9-107.5 26.9 27-57.5 82.7-97.6 91.3-103.8.8-.6.3-.8.3-.8zm15.6 318.1c-1.4 30 4.6 60 16.4 87.2 13.6 26.4 32.7 51 56.5 69.3-59.5-11.5-111.5-43.9-149.4-89.3C21.1 376.3 0 318.4 0 257.9c0-51.2 62.4-94.4 136-94.4 36.6-.6 72.4 10.9 101.8 32.7l-3.6 1.2c-51.5 17.6-98.5 90.7-98.5 158.1M469.8 400l-.7.1c-11.8 18.8-25.9 35.1-42.2 49.5-30.8 28-68.1 45.5-108.8 49.9-18.6.3-36.8-3.2-53.8-11.4-25.6-10.3-47.1-30-61.6-53-14.4-23.9-21.1-51.7-19-79.6-.6-20.1 5.4-40.3 15-58.2 13.9 33.1 37.5 61.3 67.6 80.8s65.5 29.5 101.4 28.6c31 .3 62.1-6.7 90.2-20.5l1.9-.9c3.9-2.3 7.7-3.9 11.6 0 4.5 4.9 1.8 9.2-1.2 14-.2.2-.3.5-.4.7"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            SystemEye
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              06. Class Diagrams
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="deep-purple" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/Raj-G07/System-design-observation" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+</div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../01%20.%20system-design-vs-dsa/">
+        
+  
+  
+    
+  
+  01. System Design vs DSA
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../02%20.%20pillars-of-system-design/">
+        
+  
+  
+    
+  
+  02. Pillars of System Design
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../03%20.%20hld-vs-lld/">
+        
+  
+  
+    
+  
+  03. HLD vs LLD
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../04%20.%20oops-in-system-design/">
+        
+  
+  
+    
+  
+  04. OOPs in System Design
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../05%20.%20uml-diagrams/">
+        
+  
+  
+    
+  
+  05. UML Diagrams
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="./">
+        
+  
+  
+    
+  
+  06. Class Diagrams
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../07%20.%20sequence-diagrams/">
+        
+  
+  
+    
+  
+  07. Sequence Diagrams
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../08%20.%20solid-design-principles/">
+        
+  
+  
+    
+  
+  08. SOLID Principles
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../09%20.%20signature-property-method-rule/">
+        
+  
+  
+    
+  
+  09. Signature/Property/Method Rule
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../10%20.%20exception-rule/">
+        
+  
+  
+    
+  
+  10. Exception Rule
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../11%20.%20real-world-example/">
+        
+  
+  
+    
+  
+  11. Real World Example
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../12%20.%20strategy-design-pattern/">
+        
+  
+  
+    
+  
+  12. Strategy Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../13%20.%20factory-design-pattern/">
+        
+  
+  
+    
+  
+  13. Factory Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../14%20.%20singleton-design-pattern/">
+        
+  
+  
+    
+  
+  14. Singleton Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../15%20.%20food-delivery-app-design/">
+        
+  
+  
+    
+  
+  15. Food Delivery System Design
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../16%20.%20observer-design-pattern/">
+        
+  
+  
+    
+  
+  16. Observer Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../17%20.%20decorator-design-pattern/">
+        
+  
+  
+    
+  
+  17. Decorator Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../18%20.%20notification-system-design/">
+        
+  
+  
+    
+  
+  18. Notification System Design
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../19%20.%20command-design-pattern/">
+        
+  
+  
+    
+  
+  19. Command Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../20%20.%20adapter-design-pattern/">
+        
+  
+  
+    
+  
+  20. Adapter Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../21%20.%20facade-design-pattern/">
+        
+  
+  
+    
+  
+  21. Facade Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../22%20.%20law-of-demeter/">
+        
+  
+  
+    
+  
+  22. Law of Demeter
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../23%20.%20music-player-design/">
+        
+  
+  
+    
+  
+  23. Music Player System Design
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../24%20.%20composite-design-pattern/">
+        
+  
+  
+    
+  
+  24. Composite Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../25%20.%20template-method-pattern/">
+        
+  
+  
+    
+  
+  25. Template Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../26%20.%20proxy-design-pattern/">
+        
+  
+  
+    
+  
+  26. Proxy Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../27%20.%20chain-of-responsibility/">
+        
+  
+  
+    
+  
+  27. Chain of Responsibility
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../28%20.%20payment-gateway-system/">
+        
+  
+  
+    
+  
+  28. Payment Gateway System Design
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../29%20.%20discount-coupon-design/">
+        
+  
+  
+    
+  
+  29. Discout Coupon Design
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../30%20.%20bridge-pattern/">
+        
+  
+  
+    
+  
+  30. Bridge Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../31%20.%20inventory-management/">
+        
+  
+  
+    
+  
+  31. Inventory Management System Design
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../32%20.%20builder-design-pattern/">
+        
+  
+  
+    
+  
+  32. Builder Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../33%20.%20dating-system-design/">
+        
+  
+  
+    
+  
+  33. Dating App System Design
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../34%20.%20iterator-design-pattern/">
+        
+  
+  
+    
+  
+  34. Iterator Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../35%20.%20flyweight-design-pattern/">
+        
+  
+  
+    
+  
+  35. Flyweight Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../36%20.%20splitwise-system-design/">
+        
+  
+  
+    
+  
+  36. Splitwise System Design
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../37%20.%20state-design-pattern/">
+        
+  
+  
+    
+  
+  37. State Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../38%20.%20tic-tac-toe-system-design/">
+        
+  
+  
+    
+  
+  38. Tic-Tac-Toe System Design
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../39%20.%20snake-%26-ladder-system-design/">
+        
+  
+  
+    
+  
+  39. Snake and Ladder System Design
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../40%20.%20mediator-design-pattern/">
+        
+  
+  
+    
+  
+  40. Mediator Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../41%20.%20prototype-design-pattern/">
+        
+  
+  
+    
+  
+  41. Prototype Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../42%20.%20chess-system-design/">
+        
+  
+  
+    
+  
+  42. Chess System Design
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../43%20.%20visitor-design-pattern/">
+        
+  
+  
+    
+  
+  43. Visitor Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../44%20.%20memento-design-pattern/">
+        
+  
+  
+    
+  
+  44. Memento Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../45%20.%20anti-pattern/">
+        
+  
+  
+    
+  
+  45. Anti Pattern
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../46%20.%20null-object-pattern/">
+        
+  
+  
+    
+  
+  46. Null Object Pattern
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="SystemEye" class="md-nav__button md-logo" data-md-component="logo" href=".." title="SystemEye">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M120.1 37.4C161.1 12.2 207.7-.8 255 0c168 0 257 123.8 257 219.5-.1 32.7-13 63.9-35.9 87.2-22.9 23.2-54 36.5-86.7 37-75.2 0-91.5-23.1-91.5-32 0-3.8 1.2-6.2 4.8-9.4l1-1.2.4-1.6c10.5-11.5 15.9-26.2 15.9-41.6 0-78.7-82.2-142.7-184-142.7-37.5-.3-74.5 8.9-107.5 26.9 27-57.5 82.7-97.6 91.3-103.8.8-.6.3-.8.3-.8zm15.6 318.1c-1.4 30 4.6 60 16.4 87.2 13.6 26.4 32.7 51 56.5 69.3-59.5-11.5-111.5-43.9-149.4-89.3C21.1 376.3 0 318.4 0 257.9c0-51.2 62.4-94.4 136-94.4 36.6-.6 72.4 10.9 101.8 32.7l-3.6 1.2c-51.5 17.6-98.5 90.7-98.5 158.1M469.8 400l-.7.1c-11.8 18.8-25.9 35.1-42.2 49.5-30.8 28-68.1 45.5-108.8 49.9-18.6.3-36.8-3.2-53.8-11.4-25.6-10.3-47.1-30-61.6-53-14.4-23.9-21.1-51.7-19-79.6-.6-20.1 5.4-40.3 15-58.2 13.9 33.1 37.5 61.3 67.6 80.8s65.5 29.5 101.4 28.6c31 .3 62.1-6.7 90.2-20.5l1.9-.9c3.9-2.3 7.7-3.9 11.6 0 4.5 4.9 1.8 9.2-1.2 14-.2.2-.3.5-.4.7"></path></svg>
+</a>
+    SystemEye
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/Raj-G07/System-design-observation" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+</div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    Home
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01%20.%20system-design-vs-dsa/">
+<span class="md-ellipsis">
+    01. System Design vs DSA
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02%20.%20pillars-of-system-design/">
+<span class="md-ellipsis">
+    02. Pillars of System Design
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03%20.%20hld-vs-lld/">
+<span class="md-ellipsis">
+    03. HLD vs LLD
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../04%20.%20oops-in-system-design/">
+<span class="md-ellipsis">
+    04. OOPs in System Design
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../05%20.%20uml-diagrams/">
+<span class="md-ellipsis">
+    05. UML Diagrams
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    06. Class Diagrams
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    06. Class Diagrams
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-is-a-class-diagram">
+<span class="md-ellipsis">
+      🧠 What Is a Class Diagram?
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-syntax">
+<span class="md-ellipsis">
+      🏗️ Basic Syntax
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-e-commerce-system-example">
+<span class="md-ellipsis">
+      ⚙️ 1. E-Commerce System Example
+    </span>
+</a>
+<nav aria-label="⚙️ 1. E-Commerce System Example" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scenario">
+<span class="md-ellipsis">
+      🛍️ Scenario
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#uml-representation">
+<span class="md-ellipsis">
+      UML Representation
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-ride-sharing-app-example-uber-ola">
+<span class="md-ellipsis">
+      🚗 2. Ride-Sharing App Example (Uber / Ola)
+    </span>
+</a>
+<nav aria-label="🚗 2. Ride-Sharing App Example (Uber / Ola)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scenario_1">
+<span class="md-ellipsis">
+      🧩 Scenario
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-social-media-platform-example">
+<span class="md-ellipsis">
+      📱 3. Social Media Platform Example
+    </span>
+</a>
+<nav aria-label="📱 3. Social Media Platform Example" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scenario_2">
+<span class="md-ellipsis">
+      🧩 Scenario
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-relationships-in-class-diagrams">
+<span class="md-ellipsis">
+      🔗 Common Relationships in Class Diagrams
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tools-for-creating-class-diagrams">
+<span class="md-ellipsis">
+      🧰 Tools for Creating Class Diagrams
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#references">
+<span class="md-ellipsis">
+      📘 References
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#summary">
+<span class="md-ellipsis">
+      🏁 Summary
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../07%20.%20sequence-diagrams/">
+<span class="md-ellipsis">
+    07. Sequence Diagrams
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../08%20.%20solid-design-principles/">
+<span class="md-ellipsis">
+    08. SOLID Principles
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../09%20.%20signature-property-method-rule/">
+<span class="md-ellipsis">
+    09. Signature/Property/Method Rule
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10%20.%20exception-rule/">
+<span class="md-ellipsis">
+    10. Exception Rule
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11%20.%20real-world-example/">
+<span class="md-ellipsis">
+    11. Real World Example
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../12%20.%20strategy-design-pattern/">
+<span class="md-ellipsis">
+    12. Strategy Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../13%20.%20factory-design-pattern/">
+<span class="md-ellipsis">
+    13. Factory Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../14%20.%20singleton-design-pattern/">
+<span class="md-ellipsis">
+    14. Singleton Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../15%20.%20food-delivery-app-design/">
+<span class="md-ellipsis">
+    15. Food Delivery System Design
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../16%20.%20observer-design-pattern/">
+<span class="md-ellipsis">
+    16. Observer Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../17%20.%20decorator-design-pattern/">
+<span class="md-ellipsis">
+    17. Decorator Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../18%20.%20notification-system-design/">
+<span class="md-ellipsis">
+    18. Notification System Design
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../19%20.%20command-design-pattern/">
+<span class="md-ellipsis">
+    19. Command Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../20%20.%20adapter-design-pattern/">
+<span class="md-ellipsis">
+    20. Adapter Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../21%20.%20facade-design-pattern/">
+<span class="md-ellipsis">
+    21. Facade Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../22%20.%20law-of-demeter/">
+<span class="md-ellipsis">
+    22. Law of Demeter
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../23%20.%20music-player-design/">
+<span class="md-ellipsis">
+    23. Music Player System Design
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../24%20.%20composite-design-pattern/">
+<span class="md-ellipsis">
+    24. Composite Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../25%20.%20template-method-pattern/">
+<span class="md-ellipsis">
+    25. Template Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../26%20.%20proxy-design-pattern/">
+<span class="md-ellipsis">
+    26. Proxy Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../27%20.%20chain-of-responsibility/">
+<span class="md-ellipsis">
+    27. Chain of Responsibility
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../28%20.%20payment-gateway-system/">
+<span class="md-ellipsis">
+    28. Payment Gateway System Design
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../29%20.%20discount-coupon-design/">
+<span class="md-ellipsis">
+    29. Discout Coupon Design
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../30%20.%20bridge-pattern/">
+<span class="md-ellipsis">
+    30. Bridge Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../31%20.%20inventory-management/">
+<span class="md-ellipsis">
+    31. Inventory Management System Design
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../32%20.%20builder-design-pattern/">
+<span class="md-ellipsis">
+    32. Builder Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../33%20.%20dating-system-design/">
+<span class="md-ellipsis">
+    33. Dating App System Design
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../34%20.%20iterator-design-pattern/">
+<span class="md-ellipsis">
+    34. Iterator Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../35%20.%20flyweight-design-pattern/">
+<span class="md-ellipsis">
+    35. Flyweight Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../36%20.%20splitwise-system-design/">
+<span class="md-ellipsis">
+    36. Splitwise System Design
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../37%20.%20state-design-pattern/">
+<span class="md-ellipsis">
+    37. State Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../38%20.%20tic-tac-toe-system-design/">
+<span class="md-ellipsis">
+    38. Tic-Tac-Toe System Design
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../39%20.%20snake-%26-ladder-system-design/">
+<span class="md-ellipsis">
+    39. Snake and Ladder System Design
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../40%20.%20mediator-design-pattern/">
+<span class="md-ellipsis">
+    40. Mediator Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../41%20.%20prototype-design-pattern/">
+<span class="md-ellipsis">
+    41. Prototype Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../42%20.%20chess-system-design/">
+<span class="md-ellipsis">
+    42. Chess System Design
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../43%20.%20visitor-design-pattern/">
+<span class="md-ellipsis">
+    43. Visitor Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../44%20.%20memento-design-pattern/">
+<span class="md-ellipsis">
+    44. Memento Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../45%20.%20anti-pattern/">
+<span class="md-ellipsis">
+    45. Anti Pattern
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../46%20.%20null-object-pattern/">
+<span class="md-ellipsis">
+    46. Null Object Pattern
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="class-diagrams-the-foundation-of-object-oriented-design">🧩 Class Diagrams — The Foundation of Object-Oriented Design<a class="headerlink" href="#class-diagrams-the-foundation-of-object-oriented-design" title="Permanent link">¶</a></h1>
+<p>A <strong>Class Diagram</strong> is one of the most important <strong>UML (Unified Modeling Language)</strong> diagrams used in <strong>Low-Level Design (LLD)</strong>.<br/>
+It shows how <strong>classes</strong>, <strong>attributes</strong>, <strong>methods</strong>, and <strong>relationships</strong> connect to form the blueprint of a system.</p>
+<hr/>
+<h2 id="what-is-a-class-diagram">🧠 What Is a Class Diagram?<a class="headerlink" href="#what-is-a-class-diagram" title="Permanent link">¶</a></h2>
+<p>A <strong>Class Diagram</strong> describes:</p>
+<ul>
+<li>The <strong>structure</strong> of a system in terms of classes and their attributes.</li>
+<li>The <strong>relationships</strong> between objects (association, inheritance, aggregation, composition).</li>
+<li>The <strong>behaviors</strong> or methods each class exposes.</li>
+</ul>
+<p>Think of it as a <strong>skeleton</strong> of your application — it helps you move from conceptual architecture to actual code.</p>
+<hr/>
+<h2 id="basic-syntax">🏗️ Basic Syntax<a class="headerlink" href="#basic-syntax" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ClassName</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">- attribute1</td>
+</tr>
+<tr>
+<td style="text-align: left;">- attribute2</td>
+</tr>
+<tr>
+<td style="text-align: left;">+ method1()</td>
+</tr>
+<tr>
+<td style="text-align: left;">+ method2()</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Legend:</strong></p>
+<ul>
+<li><code>+</code> → Public  </li>
+<li><code>-</code> → Private  </li>
+<li><code>#</code> → Protected  </li>
+<li><code>~</code> → Package (default)</li>
+</ul>
+<hr/>
+<h2 id="1-e-commerce-system-example">⚙️ 1. E-Commerce System Example<a class="headerlink" href="#1-e-commerce-system-example" title="Permanent link">¶</a></h2>
+<div class="admonition example">
+<h3 id="scenario">🛍️ Scenario<a class="headerlink" href="#scenario" title="Permanent link">¶</a></h3>
+<p>We want to design a simplified <strong>E-commerce System</strong> with customers placing orders containing products.</p>
+<h3 id="uml-representation">UML Representation<a class="headerlink" href="#uml-representation" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Customer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">- id</td>
+</tr>
+<tr>
+<td style="text-align: left;">- name</td>
+</tr>
+<tr>
+<td style="text-align: left;">- email</td>
+</tr>
+<tr>
+<td style="text-align: left;">+ placeOrder()</td>
+</tr>
+<tr>
+<td style="text-align: left;">+ viewOrder()</td>
+</tr>
+</tbody>
+</table>
+<p>Customer -----&lt; Order
+*
+| Order |
+|:-----|
+| - id |
+| - date |
+| - totalAmount |
+| + addItem() |
+| + calculate() |</p>
+<p>Order -----&lt; Product
+*
+| Product |
+|:----|
+| - id |
+| - name |
+| - price |
+| + getPrice() |</p>
+<p><strong>Explanation:</strong>
+- A <strong>Customer</strong> can place multiple <strong>Orders</strong>.
+- An <strong>Order</strong> can contain multiple <strong>Products</strong>.
+- Relationships:
+  - <strong>Customer → Order</strong> (1 to many)
+  - <strong>Order → Product</strong> (many to many)</p>
+<p>👉 <strong>Real-World Use:</strong><br/>
+This diagram would guide backend developers to implement classes and database tables for customers, orders, and products.</p>
+</div>
+<hr/>
+<h2 id="2-ride-sharing-app-example-uber-ola">🚗 2. Ride-Sharing App Example (Uber / Ola)<a class="headerlink" href="#2-ride-sharing-app-example-uber-ola" title="Permanent link">¶</a></h2>
+<div class="admonition example">
+<h3 id="scenario_1">🧩 Scenario<a class="headerlink" href="#scenario_1" title="Permanent link">¶</a></h3>
+<p>Design a <strong>Ride-Sharing System</strong> where riders request rides, and drivers accept them.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">User</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">- id</td>
+</tr>
+<tr>
+<td style="text-align: left;">- name</td>
+</tr>
+<tr>
+<td style="text-align: left;">- phone</td>
+</tr>
+<tr>
+<td style="text-align: left;">+ login()</td>
+</tr>
+<tr>
+<td style="text-align: left;">+ logout()</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Rider</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">+ requestRide()</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Driver</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">- licenseNo</td>
+</tr>
+<tr>
+<td style="text-align: left;">+ acceptRide()</td>
+</tr>
+<tr>
+<td style="text-align: left;">+ completeRide()</td>
+</tr>
+</tbody>
+</table>
+<p>Rider 1 -----&lt; Ride &gt;----- 1 Driver
+*
+| Ride |
+|:----|
+| - id |
+| - source |
+| - destination |
+| - fare |
+| + calculateFare() |
+| + startRide() |</p>
+<p><strong>Explanation:</strong>
+- Both <strong>Rider</strong> and <strong>Driver</strong> inherit from <strong>User</strong> (using inheritance).
+- <strong>Ride</strong> connects both via association.
+- Promotes <strong>reusability</strong> and <strong>extensibility</strong>.</p>
+<p>👉 <strong>System Design Insight:</strong><br/>
+In a scalable system, each of these classes could correspond to microservices or database entities.</p>
+</div>
+<hr/>
+<h2 id="3-social-media-platform-example">📱 3. Social Media Platform Example<a class="headerlink" href="#3-social-media-platform-example" title="Permanent link">¶</a></h2>
+<div class="admonition example">
+<h3 id="scenario_2">🧩 Scenario<a class="headerlink" href="#scenario_2" title="Permanent link">¶</a></h3>
+<p>Design a <strong>Social Media System</strong> with users, posts, and comments.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">User</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">- id</td>
+</tr>
+<tr>
+<td style="text-align: left;">- username</td>
+</tr>
+<tr>
+<td style="text-align: left;">- email</td>
+</tr>
+<tr>
+<td style="text-align: left;">+ createPost()</td>
+</tr>
+<tr>
+<td style="text-align: left;">+ comment()</td>
+</tr>
+</tbody>
+</table>
+<p>User -----&lt; Post
+*</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Post</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">- id</td>
+</tr>
+<tr>
+<td style="text-align: left;">- content</td>
+</tr>
+<tr>
+<td style="text-align: left;">- timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left;">+ addComment()</td>
+</tr>
+<tr>
+<td style="text-align: left;">+ like()</td>
+</tr>
+</tbody>
+</table>
+<p>Post 1 -----&lt; Comment
+*
+| Comment |
+|:----|
+| - id |
+| - text |
+| - authorId |
+| + edit() |
+| + delete() |</p>
+<p><strong>Explanation:</strong>
+- A <strong>User</strong> can have many <strong>Posts</strong>.
+- A <strong>Post</strong> can have many <strong>Comments</strong>.
+- Strong <strong>composition</strong> relationship between <code>Post</code> and <code>Comment</code>.</p>
+<p>👉 <strong>Use Case:</strong><br/>
+Helps plan your data model for MongoDB or relational schema.</p>
+</div>
+<hr/>
+<h2 id="common-relationships-in-class-diagrams">🔗 Common Relationships in Class Diagrams<a class="headerlink" href="#common-relationships-in-class-diagrams" title="Permanent link">¶</a></h2>
+<div class="admonition details">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Relationship</th>
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Association</strong></td>
+<td style="text-align: left;">Line</td>
+<td style="text-align: left;">“Uses” relationship between classes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Multiplicity</strong></td>
+<td style="text-align: left;"><code>1..*</code></td>
+<td style="text-align: left;">Defines how many objects can relate</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Inheritance (Generalization)</strong></td>
+<td style="text-align: left;">Arrow with hollow triangle</td>
+<td style="text-align: left;">Parent–child relationship</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Aggregation</strong></td>
+<td style="text-align: left;">Diamond (empty)</td>
+<td style="text-align: left;">Whole–part relationship (weak)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Composition</strong></td>
+<td style="text-align: left;">Diamond (filled)</td>
+<td style="text-align: left;">Whole–part relationship (strong)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Dependency</strong></td>
+<td style="text-align: left;">Dotted arrow</td>
+<td style="text-align: left;">One class depends on another</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr/>
+<h2 id="tools-for-creating-class-diagrams">🧰 Tools for Creating Class Diagrams<a class="headerlink" href="#tools-for-creating-class-diagrams" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://plantuml.com/class-diagram"><strong>PlantUML</strong></a></li>
+<li><a href="https://mermaid.js.org/syntax/classDiagram.html"><strong>Mermaid (Markdown Diagrams)</strong></a></li>
+<li><a href="https://www.lucidchart.com/"><strong>Lucidchart</strong></a></li>
+<li><a href="https://app.diagrams.net/"><strong>Draw.io (diagrams.net)</strong></a></li>
+<li><a href="https://online.visual-paradigm.com/"><strong>Visual Paradigm</strong></a></li>
+</ul>
+<hr/>
+<h2 id="references">📘 References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
+<details class="link" open="open">
+<summary>Link</summary>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/class-diagram/">GeeksforGeeks — Class Diagrams in UML</a></li>
+<li><a href="https://plantuml.com/class-diagram">PlantUML — Class Diagram Documentation</a></li>
+<li><a href="https://mermaid.js.org/syntax/classDiagram.html">Mermaid — Class Diagram Syntax</a></li>
+<li><a href="https://www.tutorialspoint.com/uml/uml_class_diagram.htm">TutorialsPoint — UML Class Diagrams</a></li>
+</ul>
+</details>
+<hr/>
+<h2 id="summary">🏁 Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
+<div class="admonition details">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Concept</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Purpose</strong></td>
+<td style="text-align: left;">Visually model class structure and relationships</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Used In</strong></td>
+<td style="text-align: left;">Low-Level Design (LLD), database schema planning, API design</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Helps Developers</strong></td>
+<td style="text-align: left;">Understand inter-class dependencies</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Outcome</strong></td>
+<td style="text-align: left;">Cleaner, modular, and maintainable architecture</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p><strong>In short:</strong><br/>
+Class diagrams turn your <em>ideas</em> into <em>blueprints</em> — the essential step before writing code.</p>
+</blockquote>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: 05. UML Diagrams" class="md-footer__link md-footer__link--prev" href="../05%20.%20uml-diagrams/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                05. UML Diagrams
+              </div>
+</div>
+</a>
+<a aria-label="Next: 07. Sequence Diagrams" class="md-footer__link md-footer__link--next" href="../07%20.%20sequence-diagrams/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                07. Sequence Diagrams
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      © 2025 Raj Gupta. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/in/raj-gupta07" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
+</a>
+<a class="md-social__link" href="https://x.com/RajG0709" rel="noopener" target="_blank" title="x.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.footer", "toc.integrate", "content.code.copy", "search.suggest", "search.highlight", "footer.social"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+</body>
+</html>

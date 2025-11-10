@@ -1,0 +1,7 @@
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 0;
+  border-left-width: 4px;
+  font-weight: 600; /* Change 600 to 700 for bold */
+  font-size: .7rem;
+}
