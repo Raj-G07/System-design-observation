@@ -1,0 +1,36 @@
+/* Generic Pygments / MkDocs Material */
+.highlighttable td.linenos,
+.highlight .linenos,
+.codehilite .linenos,
+.linenodiv {
+  padding-right: 12px !important;
+  margin-right: 8px !important;
+  opacity: 0.7; /* optional */
+}
+
+/* Code column padding */
+.highlighttable td.code,
+.highlight .code,
+.codehilite pre,
+pre code {
+  padding-left: 10px !important;
+}
+
+/* Prism.js line numbers plugin */
+.line-numbers .line-numbers-rows {
+  width: auto !important;
+  margin-right: 12px !important;
+  padding-right: 12px !important;
+  pointer-events: none;
+}
+
+/* Some themes use a pseudo-element for numbers — add left padding to pre */
+pre[class*="language-"] {
+  padding-left: 3.2em !important;
+}
+
+/* Fallback for odd custom wrappers */
+pre > .linenodiv,
+pre > .linenumbers {
+  padding-right: 12px !important;
+}
