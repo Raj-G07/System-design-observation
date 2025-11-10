@@ -106,7 +106,7 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_div_format
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tasklist      # Task lists
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -120,7 +120,4 @@ extra_css:
   - styles/custom.css
   - styles/code-custom.css
   - styles/admonition.css
-  
-extra_javascript:
-  - https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js
-  - js/mermaid-init.js
+
