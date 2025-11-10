@@ -11,7 +11,7 @@ theme:
   icon:
     repo: fontawesome/brands/github   # ✅ GitHub logo only
   font:
-    text: Inter
+    text: Open Sans
     code: Fira Code
   features:
     - navigation.instant
@@ -107,6 +107,10 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_div_format
   - pymdownx.tasklist      # Task lists
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
 extra_css:
   - styles/mermaid-custom.css
   - styles/custom.css
