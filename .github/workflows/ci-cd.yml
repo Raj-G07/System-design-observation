@@ -27,6 +27,7 @@ jobs:
       - name: Install MkDocs and plugins
         run: |
           pip install mkdocs-material
+          pip install mkdocs-mermaid2-plugin
           pip install mkdocs-minify-plugin mkdocs-git-revision-date-localized-plugin mkdocs-awesome-pages-plugin
 
       # 4️ Build your site
