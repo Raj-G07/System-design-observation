@@ -1,4 +1,4 @@
-site_name: System Design Observation
+site_name: SystemEye
 site_description: Notes and examples on System Design, OOP, and Design Patterns
 site_author: Raj Gupta
 repo_url: https://github.com/Raj-G07/System-design-observation
@@ -9,6 +9,7 @@ plugins:
 theme:
   name: material
   icon:
+    logo: fontawesome/brands/edge  
     repo: fontawesome/brands/github   # ✅ GitHub logo only
   font:
     text: Open Sans
@@ -114,7 +115,8 @@ markdown_extensions:
 extra_css:
   - styles/mermaid-custom.css
   - styles/custom.css
-
+  - styles/code-custom.css
+  
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js
   - js/mermaid-init.js
