@@ -1,12 +1,35 @@
-/* Headings hover effect with theme-aware color */
-h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
-    /* Use accent color from theme */
-    color: var(--md-accent-fg-color);
-    transition: color 0.3s ease;
-    cursor: pointer;
+
+/* ===== Light Mode Heading Colors ===== */
+[data-md-color-scheme="default"] h1,
+[data-md-color-scheme="default"] h2,
+[data-md-color-scheme="default"] h3,
+[data-md-color-scheme="default"] h4,
+[data-md-color-scheme="default"] h5,
+[data-md-color-scheme="default"] h6 {
+  color: #0f0f0f; 
+   transition: color 0.3s ease;
 }
 
+/* ===== Dark Mode Heading Colors ===== */
+[data-md-color-scheme="slate"] h1,
+[data-md-color-scheme="slate"] h2,
+[data-md-color-scheme="slate"] h3,
+[data-md-color-scheme="slate"] h4,
+[data-md-color-scheme="slate"] h5,
+[data-md-color-scheme="slate"] h6 {
+    color: #f4f5f7; 
+  transition: color 0.3s ease;
+}
+
+/* Headings hover effect with theme-aware color */
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+        /* Use accent color from theme */
+        color: var(--md-accent-fg-color);
+        transition: color 0.3s ease;
+        cursor: pointer;
+ }
+    
 /* Optional: different hover effect for h1 specifically */
 h1:hover {
-    color: var(--md-primary-fg-color);
+        color: var(--md-primary-fg-color);
 }
