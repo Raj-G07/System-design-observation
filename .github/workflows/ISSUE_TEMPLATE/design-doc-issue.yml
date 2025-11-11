@@ -1,0 +1,83 @@
+name: 🧱 System Design / Design Pattern Improvement
+description: Suggest a new topic, fix an error, or enhance existing documentation
+title: "[Topic]: <Short and clear issue title>"
+labels: ["documentation", "enhancement"]
+assignees: ["raj-gupta"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        👋 **Thanks for contributing to the System Design & Design Pattern Docs!**  
+        Please provide clear details so we can address your issue efficiently.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: 📘 Category
+      description: Which section does this issue relate to?
+      options:
+        - System Design Concept
+        - UML Diagram
+        - Design Principle
+        - Creational Pattern
+        - Structural Pattern
+        - Behavioral Pattern
+        - Real-World Example
+        - General Documentation
+    validations:
+      required: true
+
+  - type: input
+    id: file
+    attributes:
+      label: 🗂️ File or Topic Name
+      description: Specify which Markdown file or topic this issue is about.
+      placeholder: "e.g., 14-singleton-design-pattern.md or Builder Pattern"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 🧠 Description
+      description: Explain what the issue is or what improvement you suggest.
+      placeholder: |
+        Example:
+        - Typo in Factory Pattern explanation.
+        - Missing UML diagram for Adapter Pattern.
+        - Add C++ implementation for State Pattern.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-change
+    attributes:
+      label: 💡 Proposed Change
+      description: Describe what you'd like to be changed or added.
+      placeholder: |
+        Example:
+        - Add UML and class diagram.
+        - Refactor code to follow SOLID principles.
+        - Improve readability of example code.
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: ⏰ Urgency
+      description: How urgent or important is this change?
+      options:
+        - Low (Nice-to-have)
+        - Medium (Improvement or missing part)
+        - High (Broken diagram, wrong content, or missing code)
+      default: 2
+
+  - type: textarea
+    id: references
+    attributes:
+      label: 🔗 References or Additional Context
+      description: Add any related links, screenshots, or resources.
+      placeholder: |
+        - https://refactoring.guru/design-patterns
+        - Screenshot of error or incorrect diagram
+        - Reference to book/blog
