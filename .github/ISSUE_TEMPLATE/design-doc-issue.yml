@@ -2,7 +2,7 @@ name: 🧱 System Design / Design Pattern Improvement
 description: Suggest a new topic, fix an error, or enhance existing documentation
 title: "[Topic]: <Short and clear issue title>"
 labels: ["documentation", "enhancement"]
-assignees: ["raj-gupta"]
+assignees: ["Raj-G07"]
 
 body:
   - type: markdown
