@@ -1,0 +1,92 @@
+name: System Design & Design Patterns PR
+description: Submit updates or additions to the System Design & Design Pattern documentation
+title: "[PR]: <Add short and descriptive title here>"
+labels: ["pull-request", "documentation"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        👋 **Thank you for contributing to the System Design & Design Patterns project!**  
+        Please make sure your pull request follows our guidelines.
+
+  - type: input
+    id: related-issue
+    attributes:
+      label: 🔗 Related Issue
+      description: Link to any related issue (if applicable).
+      placeholder: "#42"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: change-type
+    attributes:
+      label: 📂 Type of Change
+      description: Select the type of contribution.
+      options:
+        - 📝 New Documentation (New Pattern or Concept)
+        - 🔧 Update Existing Documentation
+        - 🖼️ Add UML/Diagram
+        - 💡 Code Example Added/Improved
+        - 🐛 Fix Typo or Incorrect Information
+        - 🚀 Enhancement (Formatting, Styling, or Structure)
+      default: 1
+    validations:
+      required: true
+
+  - type: input
+    id: file-name
+    attributes:
+      label: 🗂️ Modified / Added File(s)
+      description: List the markdown file(s) that were changed or added.
+      placeholder: "e.g., 14-singleton-design-pattern.md, 25-template-method-pattern.md"
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: 🧠 Summary of Changes
+      description: Briefly describe what was added, changed, or fixed.
+      placeholder: |
+        Example:
+        - Added C++ implementation for Builder Pattern
+        - Updated UML diagram for Adapter Pattern
+        - Fixed typo and formatting in Strategy Pattern
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: 💬 Motivation and Context
+      description: Why is this change necessary or useful?
+      placeholder: |
+        Example:
+        - Improves clarity for beginners
+        - Adds missing real-world example
+        - Enhances visual consistency across patterns
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 🖼️ Screenshots / UML Preview (if applicable)
+      description: Include screenshots or mermaid previews for visual changes.
+      placeholder: "Attach images or code snippets of your diagram here."
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ PR Checklist
+      options:
+        - label: My code follows the repository's contribution guidelines.
+          required: true
+        - label: I have verified the diagrams render correctly (Mermaid/UML).
+          required: false
+        - label: I have tested the markdown formatting and syntax.
+          required: true
+        - label: I have updated references or links if required.
+          required: false
+        - label: My PR title is clear and descriptive.
+          required: true
